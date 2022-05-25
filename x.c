@@ -77,7 +77,7 @@ static void zoomreset(const Arg *);
 static void ttysend(const Arg *);
 
 /* config.h for applying patches and the configuration. */
-#include "config.def.h"
+#include "config.h"
 
 /* XEMBED messages */
 #define XEMBED_FOCUS_IN  4

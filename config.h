@@ -1,15 +1,15 @@
 /* See LICENSE file for copyright and license details. */
-
 /*
  * appearance
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "hack:pixelsize=18:antialias=ture:autohint=true";
-static char *font2[] = { "mono:pixelsize=18:antialias=true:autohint=false" };
-static char *font3[] = { "JoyPixels:pixelsize=18:antialias=true:autohint=false" };
+static char *font = "FiraCode:size=16:antialias=ture:autohint=true";
+static char *font2[] = {
+  "JoyPixels:pixelsize=18:antialias=true:autohint=true",
+  "Hack:size=16:antialias=true:autohint=true",
+};
 static int borderpx = 2;
-
 /*
  * What program is execed by st depends of these precedence rules:
  * 1: program passed with -e
@@ -18,7 +18,7 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/sh";
+static char *shell = "/usr/bin/zsh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
@@ -105,7 +105,7 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 8;
+unsigned int tabspaces = 4;
 
 /* bg opacity */
 float alpha = 0.8;
@@ -190,8 +190,9 @@ static uint forcemousemod = ShiftMask;
  */
 ResourcePref resources[] = {
 		{ "font",         STRING,  &font },
-		{ "fontalt0",     STRING,  &font2[0] },
-		{ "fontalt1",     STRING,  &font3[0] },
+    { "fontalt0",     STRING,  &font2[0] },
+    { "fontalt1",     STRING,  &font2[1] },
+    { "fontalt2",     STRING,  &font2[2] },
 		{ "color0",       STRING,  &colorname[0] },
 		{ "color1",       STRING,  &colorname[1] },
 		{ "color2",       STRING,  &colorname[2] },
